@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   get '/' => 'home#index'
   get '/main' => 'home#show', as: 'main'
+  get '/allschools' => 'school#index', as: 'all_schools'
+
+  get '/schools' => 'school#new', as: 'new_school'
+  post '/schools' => 'school#create'
 
 
 
