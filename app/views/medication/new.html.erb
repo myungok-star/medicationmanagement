@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 center-align">
+            <h1>Add a new medication</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+
+        <%= form_for :medication, url:'/medications', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
+
+        <div class="input-field col s12">
+            <select name="medication[school_id]" id="medication[school_id]">
+                <option value="" disabled selected>Choose a school</option>
+                <% @schools.each do |school| %>
+                <option value="<%= school.id %>"><%= school.name %></option>
+                <% end %>
+            </select>
+            <label>School:</label>
+        </div>
+        <div class="input-field col s12">
+            <select name="medication[medication_category_id]" id="medication[medication_category_id]">
+                <option value="" disabled selected>Choose a medication</option>
+                <% @medication_categories.each do |medication_category| %>
+                <option value="<%= medication_category.id %>"><%= medication_category.name %></option>
+                <% end %>
+            </select>
+            <label>Medication:</label>
+        </div>
+        <div class="input-field col s12">
+            <label>Quantity:</label>
+            <input id="medication[quantity]" name="medication[quantity]" max="20" min="1" type="number" placeholder="1"/>
+        </div>
+
+        <%= f.submit 'Add', class: 'btn waves-effect waves-light col s3' %>
+        <% end %>
+    </div>
+</div>

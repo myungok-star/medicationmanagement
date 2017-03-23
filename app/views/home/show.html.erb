@@ -1,8 +1,22 @@
-<!-- Add a medication
-<%= link_to "Add", main_path, class: "waves-effect waves-light btn center-align" %><br>
-View medications
-<%= link_to "View", main_path, class: "waves-effect waves-light btn center-align" %><br> -->
-Add a school
-<%= link_to "Add", new_school_path, class: "waves-effect waves-light btn center-align" %><br>
-View a list of schools
-<%= link_to "View", all_schools_path, class: "waves-effect waves-light btn center-align" %><br>
+<div class="container">
+    <div class="row center-align">
+        <ul>
+            <li><h4>Add a medication</h4></li>
+            <%= link_to "Add", new_medication_path, class: "waves-effect waves-light btn center-align" %>
+            <br>
+            <br>
+            <li><h4>Create a medication category</h4></li>
+            <%= link_to "Create", new_medication_category_path, class: "waves-effect waves-light btn center-align" %>
+            <br>
+            <br>
+            <li><h4>Add a school</h4></li>
+            <%= link_to "Add", new_school_path, class: "waves-effect waves-light btn center-align" %>
+            <br>
+            <br>
+            <li><h4>View a list of schools and medications</h4></li>
+            <%= link_to "View", all_schools_path, class: "waves-effect waves-light btn center-align" %>
+            <br>
+            <br>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,2 @@
+class MedicationCategory < ApplicationRecord
+end
