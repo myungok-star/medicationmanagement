@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container" style="margin-top: 6em">
   <div class="row">
     <div class="col s12 center-align">
-      <h1>Add a new school</h1>
+      <h3>Add a new school</h3>
     </div>
   </div>
 </div>
 <div class="container">
-    <div class="row">
-        <%= form_for :school, url: '/schools', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
-        <%= f.text_field :name, required: true, class: "input-field col s12", placeholder: "Name goes here" %>
-        <%= f.submit 'Add', class: 'btn waves-effect waves-light col s3' %>
+    <div class="row center-align">
+        <%= form_for :school, url: '/schools', html: { multipart: true, class: "col s12 m6 offset-m3 center-align"} do |f| %>
+        <%= f.text_field :name, required: true, class: "input-field col s12", placeholder: "School name goes here" %>
+        <%= f.submit 'Add', class: 'btn waves-effect blue' %>
         <% end %>
     </div>
 </div>

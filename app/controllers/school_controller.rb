@@ -1,6 +1,8 @@
 class SchoolController < ApplicationController
   def index
+    @medications = Medication.all
     @schools = School.all
+    @medication_categories = MedicationCategory.all
   end
 
   def create
@@ -13,10 +15,15 @@ class SchoolController < ApplicationController
         end
   end
 
+  # def show
+  #   @medications = Medication.all
+  #   @school = School.find_by_id(params[:id])
+  #   @medication = @school.medications
+  # end
+
   private
 
   def school_params
         params.require(:school).permit(:name)
    end
-
 end
