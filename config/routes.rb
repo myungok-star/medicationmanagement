@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   get '/medications' => 'medication#new', as: 'new_medication'
-  put '/medications' => 'medication#update_med'
+  post '/medications' => 'medication#update_med'
 
   get '/medicationcategories' => 'medication_category#new', as: 'new_medication_category'
   post '/medicationcategories' => 'medication_category#create'

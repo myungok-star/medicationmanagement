@@ -9,9 +9,15 @@ class MedicationController < ApplicationController
     @schools = School.all
     @medications = Medication.all
     @medication_categories = MedicationCategory.all
-    med = Medication.find_by(medication_params)
-    med.update_attributes(medication_params)
+    med = Medication.find_by(medication_category_id: medication_params[:medication_category_id])
+    if !med
+        med = new Medication;
+        med.quantity = 0;
+
+    med.quantity += medication_params[:medication_quantity]
+    med.save
     redirect_to all_schools_path
+    end
   end
 
   private
