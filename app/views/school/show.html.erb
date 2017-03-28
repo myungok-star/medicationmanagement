@@ -1,21 +1,15 @@
-<div class="container">
-  <div class="row center-align">
-<h2><%= @school.name %></h2>
+<div class="container center-align" style="margin-top: 3em">
+    <div class="row center-align">
+        <h2><%= @school.name %></h2>
+        <ul class="collection">
+            <% @medications.each do |medication| %>
+            <li class="collection-item">
+                <span class="title"><%= medication.medication_category.name %></span>
+                <p><%= medication.quantity %></p>
+            </li>
+            <% end %>
+        </ul>
+    </div>
 
-
-
-
-
-
-
-<ul class="collection">
-  <% @medications.each do |medication| %>
-  <li class="collection-item">
-    <span class="title"><%= medication.medication_category.name %></span>
-    <p><%= medication.quantity %></p>
-  </li>
-  <% end %>
-</ul>
-
-</div>
+<%= link_to "Back", all_schools_path, class: 'btn waves-effect blue' %>
 </div>

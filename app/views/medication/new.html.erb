@@ -7,7 +7,7 @@
 </div>
 <div class="container">
     <div class="row center-align">
-        <%= form_for :medication, url:'/medications', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
+        <%= form_for :medication, url:'/newmedication', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
         <!-- <%= f.collection_select(:school_id, School.all, :id, :name) %>
         <%= f.collection_select(:medication_category_id, MedicationCategory.all, :id, :name) %>
         <%= f.number_field(:quantity, in: 1..20) %> -->

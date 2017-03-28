@@ -1,21 +1,17 @@
-
 <div class="container center-align" style="margin-top: 2em">
-
-
-<% @schools.each do |school| %>
-
-<div class="row center-align">
-    <div class="col s12 m12">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title"><%= school.name %> </span>
-                <p><%= link_to "View Medication Information", school_info_path(id: school) %></p>
-
+    <% @schools.each do |school| %>
+    <div class="row center-align">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title"><%= school.name %>
+                    </span>
+                    <p><%= link_to "View Medication Information", school_info_path(id: school) %></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<% end %>
+    <% end %>
 
-<%= link_to "Back", main_path, class: 'btn waves-effect blue' %>
+    <%= link_to "Back", main_path, class: 'btn waves-effect blue' %>
 </div>

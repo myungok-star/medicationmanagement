@@ -4,16 +4,15 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   get '/main' => 'home#show', as: 'main'
   get '/allschools' => 'school#index', as: 'all_schools'
-  # get '/allmedications' => 'medication#index', as: 'all_medications'
 
-  get '/schools' => 'school#new', as: 'new_school'
+  get '/newschool' => 'school#new', as: 'new_school'
   get '/schools/:id' => 'school#show', as: 'school_info'
-  post '/schools' => 'school#create'
+  post '/newschool' => 'school#create'
 
-  get '/medicationcategories' => 'medication_category#new', as: 'new_medication_category'
-  post '/medicationcategories' => 'medication_category#create'
+  get '/newmedtype' => 'medication_category#new', as: 'new_medication_category'
+  post '/newmedtype' => 'medication_category#create'
 
-  get '/medications' => 'medication#new', as: 'new_medication'
-  post '/medications' => 'medication#update_med'
+  get '/newmedication' => 'medication#new', as: 'new_medication'
+  post '/newmedication' => 'medication#update_med'
 
 end

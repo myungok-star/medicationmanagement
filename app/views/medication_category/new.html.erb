@@ -1,13 +1,14 @@
 <div class="container" style="margin-top: 6em">
-  <div class="row">
-    <div class="col s12 center-align">
-      <h3>Create a new medication type</h3>
+    <div class="row">
+        <div class="col s12 center-align">
+            <h3>Create a new medication type</h3>
+        </div>
     </div>
-  </div>
 </div>
+
 <div class="container">
     <div class="row center-align">
-        <%= form_for :medication_category, url: '/medicationcategories', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
+        <%= form_for :medication_category, url: '/newmedtype', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
         <%= f.text_field :name, required: true, class: "input-field col s12", placeholder: " Medication type goes here" %>
         <%= f.submit 'Add', class: 'btn waves-effect blue' %>
         <% end %>
