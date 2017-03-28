@@ -17,7 +17,7 @@ class SchoolController < ApplicationController
 
   def show
     @school = School.find_by_id(params[:id])
-    @medications = Medication.find_by(school_id: @school.id)
+    @medications = Medication.where(school_id: @school.id)
     # @medication_categories = @medications.medication_category_id
   end
 

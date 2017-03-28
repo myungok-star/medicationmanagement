@@ -1,3 +1,21 @@
+<div class="container">
+  <div class="row center-align">
+<h2><%= @school.name %></h2>
 
-<%= @school.name %>
-<%= @medications %>
+
+
+
+
+
+
+<ul class="collection">
+  <% @medications.each do |medication| %>
+  <li class="collection-item">
+    <span class="title"><%= medication.medication_category.name %></span>
+    <p><%= medication.quantity %></p>
+  </li>
+  <% end %>
+</ul>
+
+</div>
+</div>
