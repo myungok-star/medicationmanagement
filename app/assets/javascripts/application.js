@@ -20,4 +20,8 @@
 
 $(document).ready(function() {
    $('select').material_select();
- });
+});
+
+$(document).on('turbolinks:load', function () {
+  $('select').material_select();
+});

@@ -10,11 +10,10 @@ Rails.application.routes.draw do
   get '/schools/:id' => 'school#show', as: 'school_info'
   post '/schools' => 'school#create'
 
+  get '/medicationcategories' => 'medication_category#new', as: 'new_medication_category'
+  post '/medicationcategories' => 'medication_category#create'
 
   get '/medications' => 'medication#new', as: 'new_medication'
   post '/medications' => 'medication#update_med'
-
-  get '/medicationcategories' => 'medication_category#new', as: 'new_medication_category'
-  post '/medicationcategories' => 'medication_category#create'
 
 end

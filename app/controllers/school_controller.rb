@@ -15,15 +15,16 @@ class SchoolController < ApplicationController
         end
   end
 
-  # def show
-  #   @medications = Medication.all
-  #   @school = School.find_by_id(params[:id])
-  #   @medication = @school.medications
-  # end
+  def show
+    @school = School.find_by_id(params[:id])
+    @medications = Medication.find_by(school_id: @school.id)
+    # @medication_categories = @medications.medication_category_id
+  end
 
   private
 
   def school_params
         params.require(:school).permit(:name)
-   end
+  end
+
 end
