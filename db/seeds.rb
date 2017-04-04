@@ -23,13 +23,16 @@ School.create([
 
 MedicationCategory.create([
   {
-    name: "Med 1"
+    name: "Med 1",
+    image: "http://i.imgur.com/w092rqW.png"
   },
   {
-    name: "Med 2"
+    name: "Med 2",
+    image: "http://i.imgur.com/l37lutC.jpg"
   },
   {
-    name: "Med 3"
+    name: "Med 3",
+    image: "http://i.imgur.com/BH7LRLC.jpg"
   }
 ])
 

@@ -2,13 +2,13 @@
     <%= flash[:notice] %>
 </div>
 
-
 <div class="container center-align" style="margin-top: 3em">
     <div class="row center-align">
         <h2><%= @school.name %></h2>
         <ul class="collection">
             <% @medications.each do |medication| %>
-            <li class="collection-item">
+            <li class="collection-item avatar">
+              <%= image_tag(medication.medication_category.image, class: "circle") %> 
                 <span class="title"><%= medication.medication_category.name %></span>
                 <p><%= medication.quantity  %></p>
                   <!-- <%= link_to "Update", all_schools_path, class: 'btn waves-effect blue' %> -->
