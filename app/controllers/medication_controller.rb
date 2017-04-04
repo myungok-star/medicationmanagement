@@ -11,7 +11,11 @@ class MedicationController < ApplicationController
         end
         med.quantity += medication_params[:quantity].to_i
         if med.save
-        redirect_to school_info_path(medication_params[:school_id])
+          flash[:notice] = 'You have successfully added a new medication!'
+          redirect_to school_info_path(medication_params[:school_id])
+        else
+          redirect_to new_medication_path
+          flash[:notice] = "Please fill out the entire form."
         end
     end
 

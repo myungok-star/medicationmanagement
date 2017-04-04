@@ -1,3 +1,7 @@
+<div class="col s12 center-align">
+    <%= flash[:notice] %>
+</div>
+
 <div class="container" style="margin-top: 6em">
     <div class="row">
         <div class="col s12 center-align">
@@ -8,7 +12,7 @@
 <div class="container">
     <div class="row center-align">
         <%= form_for :school, url: '/newschool', html: { multipart: true, class: "col s12 m6 offset-m3 center-align"} do |f| %>
-        <%= f.text_field :name, required: true, class: "input-field col s12", placeholder: "School name goes here" %>
+        <%= f.text_field :name, required: true, class: "input-field col s12 validate", placeholder: "School name goes here" %>
         <%= f.submit 'Add', class: 'btn waves-effect blue' %>
         <% end %>
     </div>

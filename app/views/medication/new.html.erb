@@ -1,3 +1,7 @@
+<div class="col s12 center-align red-text" id="notice">
+    <%= flash[:notice] %>
+</div>
+
 <div class="container" style="margin-top: 6em">
     <div class="row">
         <div class="col s12 center-align">
@@ -7,32 +11,32 @@
 </div>
 <div class="container">
     <div class="row center-align">
-        <%= form_for :medication, url:'/newmedication', html: { multipart: true, class: "col s12 m6 offset-m3"} do |f| %>
+        <%= form_for :medication, url:'/newmedication', html: { multipart: true, validate: true, class:"col s12 m6 offset-m3"} do |f| %>
         <!-- <%= f.collection_select(:school_id, School.all, :id, :name) %>
         <%= f.collection_select(:medication_category_id, MedicationCategory.all, :id, :name) %>
         <%= f.number_field(:quantity, in: 1..20) %> -->
         <div class="input-field col s12">
             <select name="medication[school_id]" id="medication[school_id]">
-                <option value="" disabled selected>Choose a school</option>
+                <option value="">Select a school</option>
                 <% @schools.each do |school| %>
                 <option value="<%= school.id %>"><%= school.name %></option>
                 <% end %>
             </select>
-            <label>School:</label>
+            <label>School</label>
         </div>
 
         <div class="input-field col s12">
             <select name="medication[medication_category_id]" id="medication[medication_category_id]">
-                <option value="" disabled selected>Choose a medication type</option>
+                <option value="">Select a medication type</option>
                 <% @medication_categories.each do |medication_category| %>
                 <option value="<%= medication_category.id %>"><%= medication_category.name %></option>
                 <% end %>
             </select>
-            <label>Medication Type:</label>
+            <label>Medication Type</label>
         </div>
         <div class="input-field col s12">
-            <label>Quantity:</label>
-            <input id="medication[quantity]" name="medication[quantity]" max="20" min="1" type="number" placeholder="1"/>
+            <label>Quantity</label>
+            <input id="medication[quantity]" name="medication[quantity]" max="20" min="1" type="number" class="required" placeholder="1"/>
         </div>
 
         <%= f.submit 'Add', class: 'btn waves-effect blue' %>

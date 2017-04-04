@@ -3,6 +3,7 @@ class MedicationCategoryController < ApplicationController
   def create
     @medication_category = MedicationCategory.new(medication_category_params)
         if @medication_category.save
+            flash[:notice] = 'You have successfully created a new medication type!'
             redirect_to all_schools_path
         end
   end

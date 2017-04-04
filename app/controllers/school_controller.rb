@@ -8,8 +8,9 @@ class SchoolController < ApplicationController
     def create
         @school = School.new(school_params)
         if @school.save
+            flash[:notice] = 'You have successfully added a new school!'
             redirect_to all_schools_path
-        end    
+        end
     end
 
     def show
